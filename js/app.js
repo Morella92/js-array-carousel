@@ -9,8 +9,24 @@ let slides = [
 ]
 console.log(slides)
 
-const slideCities = document.getElementsByClassName('slide')
-console.log(slideCities)
+// const slideCities = document.getElementsByClassName('slide')
+// console.log(slideCities)
+
+for (let i = 0; i < slides.length; i++){
+
+    let citySlides = document.createElement('div')
+    console.log(citySlides)
+
+    let slideContent = document.createElement('img')
+    console.log(slideContent)
+
+    slideContent.src = slides [i]
+
+    citySlides.appendChild(slideContent)
+
+    document.body.appendChild(citySlides)
+
+}
 
 const rightArrow = document.querySelector('.arrow-right')
 console.log(rightArrow)
