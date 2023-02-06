@@ -12,10 +12,15 @@ console.log(slides)
 // const slideCities = document.getElementsByClassName('slide')
 // console.log(slideCities)
 
+const carousel = document.createElement('div')
+console.log(carousel)
+
 for (let i = 0; i < slides.length; i++){
 
     let citySlides = document.createElement('div')
     console.log(citySlides)
+
+    citySlides.classList.add('.slide.active')
 
     let slideContent = document.createElement('img')
     console.log(slideContent)
@@ -24,9 +29,11 @@ for (let i = 0; i < slides.length; i++){
 
     citySlides.appendChild(slideContent)
 
-    document.body.appendChild(citySlides)
-
+    carousel.appendChild(citySlides)
 }
+
+document.body.appendChild(carousel)
+
 
 const rightArrow = document.querySelector('.arrow-right')
 console.log(rightArrow)
