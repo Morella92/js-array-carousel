@@ -1,11 +1,10 @@
 console.log('Carousel exercise')
 
-let slides = [
-    './img/Barcellona.jpg', 
-    './img/Berlino.jpg',
-    './img/Londra.jpg',
-    './img/Parigi.jpg',
-    './img/Roma.jpg'
+let slides = [  './img/Barcellona.jpg',
+'./img/Berlino.jpg',
+'./img/Londra.jpg',
+'./img/Parigi.jpg',
+'./img/Roma.jpg'
 ]
 console.log(slides)
 
@@ -23,58 +22,55 @@ console.log(leftArrow)
 
 let activeSlide = 0
 
+let citySlides = document.createElement('div')
+console.log(citySlides)
+
+citySlides.classList.add('.slide')
+
+let slideContent = document.createElement('img')
+console.log(slideContent)
+
+slideContent.src = slides [activeSlide]
+
+citySlides.appendChild(slideContent)
+
+carousel.appendChild(citySlides)
+
 for (let i = 0; i < slides.length; i++){
 
-    let citySlides = document.createElement('div')
-    console.log(citySlides)
-
-    citySlides.classList.add('.slide')
-
-    let slideContent = document.createElement('img')
-    console.log(slideContent)
-
-    slideContent.src = slides [i]
-
-    citySlides.appendChild(slideContent)
-
-    carousel.appendChild(citySlides)
-
-    rightArrow.addEventListener('click', function(){
-        console.log('click')
     
-        let currentSlide = citySlides [activeSlide] 
-        console.log (currentSlide)
-        
-        currentSlide.classList.remove('active')
-    
-        activeSlide = activeSlide + 1
-    
-        let nextSlide = citySlides[activeSlide]
-        console.log(nextSlide)
-    
-        nextSlide.classList.add('active')
-    
-    })
 }
 
 document.body.prepend(carousel)
 
+rightArrow.addEventListener('click', function(){
+    console.log('click')
 
+    let currentSlide = citySlides [activeSlide]
+    console.log (currentSlide)
 
+    currentSlide.classList.remove('active')
 
+    activeSlide = activeSlide + 1
 
+    let nextSlide = citySlides[activeSlide]
+    console.log(nextSlide)
+
+    nextSlide.classList.add('active') 
+
+})
 
 leftArrow.addEventListener('click', function(){
     console.log('click')
 
-    let currentSlide = slideCities [activeSlide] 
+    let currentSlide = citySlides [activeSlide]
     console.log (currentSlide)
 
     currentSlide.classList.remove('active')
 
     activeSlide = activeSlide - 1
 
-    let nextSlide = slideCities[activeSlide]
+    let nextSlide = citySlides[activeSlide]
     console.log(nextSlide)
 
     nextSlide.classList.add('active')
